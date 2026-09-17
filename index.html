@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>База отдыха Спутник — отдых в сосновом лесу</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- soft moving fog overlay -->
+<div class="fog-layer" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 3 L8 15 L12 15 L6 24 L11 24 L5 29 L27 29 L21 24 L26 24 L20 15 L24 15 Z"/>
+          <line x1="16" y1="29" x2="16" y2="26"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Спутник</span>
+        <span class="brand-sub">база отдыха</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">О базе</a>
+      <a href="#stay">Проживание</a>
+      <a href="#infra">Услуги</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#location">Контакты</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+78312000000" class="nav-phone">+7 (831) 200-00-00</a>
+      <a href="#book" class="btn btn-primary btn-sm">Забронировать</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="assets/hero-forest.jpg" alt="" class="hero-img" id="heroImg" />
+    <div class="hero-scrim"></div>
+    <div class="hero-vignette"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-meta">
+      <span class="hero-dot"></span>
+      <span>Нижегородская область · 60 км от города</span>
+    </div>
+    <h1 class="hero-title">
+      Отдых и перезагрузка<br/>
+      <em>в окружении соснового леса</em>
+    </h1>
+    <p class="hero-sub">
+      Уютные домики, тишина природы и комфорт всего в часе езды от Нижнего Новгорода
+    </p>
+
+    <!-- BOOKING WIDGET -->
+    <form class="booking" id="book" onsubmit="event.preventDefault(); document.getElementById('bookMsg').classList.add('show');">
+      <div class="booking-row">
+        <label class="booking-field">
+          <span class="booking-label">Заезд</span>
+          <input type="date" id="checkin" />
+        </label>
+        <label class="booking-field">
+          <span class="booking-label">Выезд</span>
+          <input type="date" id="checkout" />
+        </label>
+        <label class="booking-field">
+          <span class="booking-label">Гости</span>
+          <select id="guests">
+            <option>2 взрослых</option>
+            <option>2 взрослых + 1 ребёнок</option>
+            <option>2 взрослых + 2 детей</option>
+            <option>3 взрослых</option>
+            <option>4 взрослых</option>
+            <option>Компания 5+</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary booking-btn">
+          Найти номер
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="booking-msg" id="bookMsg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Спасибо! Мы подобрали для вас 3 свободных варианта — прокрутите ниже.
+      </div>
+    </form>
+
+    <div class="hero-badges">
+      <div class="hero-badge"><strong>4.9</strong><span>· 340 отзывов</span></div>
+      <div class="hero-badge-sep"></div>
+      <div class="hero-badge"><strong>15 лет</strong><span>принимаем гостей</span></div>
+      <div class="hero-badge-sep"></div>
+      <div class="hero-badge"><strong>24 га</strong><span>соснового леса</span></div>
+    </div>
+  </div>
+
+  <a href="#about" class="hero-scroll" aria-label="Прокрутить вниз">
+    <span></span>
+  </a>
+</section>
+
+<!-- ABOUT / ATMOSPHERE -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <div class="eyebrow"><span></span> Атмосфера</div>
+        <h2 class="h2">Место, где время<br/>замедляет ход</h2>
+        <p class="lead">
+          Спутник — не просто база отдыха, а маленький мир, укрытый от суеты стеной старого соснового бора.
+          Здесь пахнет хвоей и утренним туманом, вечером слышно только треск костра, а сон приходит легко и глубоко.
+        </p>
+        <div class="values">
+          <div class="value">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 8c-3 2-5 5-5 8a5 5 0 0 0 10 0c0-3-2-6-5-8Z"/></svg>
+            </div>
+            <div>
+              <h4>Чистый лесной воздух</h4>
+              <p>Фитонциды сосны, тишина и километры троп для прогулок</p>
+            </div>
+          </div>
+          <div class="value">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </div>
+            <div>
+              <h4>Приватность и покой</h4>
+              <p>Домики стоят на расстоянии, чтобы ничто не мешало отдыху</p>
+            </div>
+          </div>
+          <div class="value">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M5 20v-4M19 20v-4M3 20h18"/></svg>
+            </div>
+            <div>
+              <h4>Комфорт как дома</h4>
+              <p>Тёплые полы, панорамные окна, полностью оборудованные кухни</p>
+            </div>
+          </div>
+          <div class="value">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11a4 4 0 1 0-4-4M7 11a4 4 0 1 1 4-4M3 21c0-3.9 3.1-7 7-7s7 3.1 7 7M14 21c0-2.8 2.2-5 5-5"/></svg>
+            </div>
+            <div>
+              <h4>Для семей и компаний</h4>
+              <p>Детские площадки, зоны для больших компаний, дружелюбие</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-gallery">
+        <figure class="about-fig tall reveal" style="--d:.05s">
+          <img src="assets/forest-atmosphere.jpg" alt="Сосновый лес" />
+        </figure>
+        <figure class="about-fig reveal" style="--d:.15s">
+          <img src="assets/pine-macro-2.jpg" alt="Ветка сосны" />
+        </figure>
+        <figure class="about-fig wide reveal" style="--d:.25s">
+          <img src="assets/cabin-evening.jpg" alt="Вечер у домика" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAY / ACCOMMODATION -->
+<section class="section stay" id="stay">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow"><span></span> Проживание</div>
+        <h2 class="h2">Три формата тишины</h2>
+      </div>
+      <p class="section-sub">
+        От футуристичных дом-сфер с прозрачным куполом до классических коттеджей с камином — выберите свой темп отдыха.
+      </p>
+    </div>
+
+    <div class="stay-grid">
+      <!-- Card 1: Dome -->
+      <article class="stay-card reveal" style="--d:.05s">
+        <div class="stay-media">
+          <img src="assets/cabin-dome.jpg" alt="Дом-сфера" />
+          <div class="stay-badge">Хит сезона</div>
+          <div class="stay-count">1 из 6</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-head">
+            <h3>Дом-сфера «Купол»</h3>
+            <div class="stay-cap">до 2 гостей · 34 м²</div>
+          </div>
+          <ul class="stay-amenities">
+            <li>Панорамный купол на лес</li>
+            <li>Тёплый пол</li>
+            <li>Мангальная зона</li>
+            <li>Wi-Fi</li>
+          </ul>
+          <div class="stay-foot">
+            <div class="price">
+              <span class="price-from">от</span>
+              <span class="price-val">8 900 ₽</span>
+              <span class="price-unit">/ сутки</span>
+            </div>
+            <a href="#book" class="btn btn-outline btn-sm">Забронировать</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Cottage -->
+      <article class="stay-card reveal" style="--d:.15s">
+        <div class="stay-media">
+          <img src="assets/cabin-cottage.jpg" alt="Коттедж" />
+          <div class="stay-count">1 из 4</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-head">
+            <h3>Коттедж «Хвоя»</h3>
+            <div class="stay-cap">до 6 гостей · 78 м² · 2 спальни</div>
+          </div>
+          <ul class="stay-amenities">
+            <li>Собственная баня</li>
+            <li>Терраса с видом</li>
+            <li>Полная кухня</li>
+            <li>Камин</li>
+          </ul>
+          <div class="stay-foot">
+            <div class="price">
+              <span class="price-from">от</span>
+              <span class="price-val">14 500 ₽</span>
+              <span class="price-unit">/ сутки</span>
+            </div>
+            <a href="#book" class="btn btn-outline btn-sm">Забронировать</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: A-Frame -->
+      <article class="stay-card reveal" style="--d:.25s">
+        <div class="stay-media">
+          <img src="assets/cabin-aframe.jpg" alt="A-Frame домик" />
+          <div class="stay-count">1 из 8</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-head">
+            <h3>A-Frame «Клин»</h3>
+            <div class="stay-cap">до 4 гостей · 48 м²</div>
+          </div>
+          <ul class="stay-amenities">
+            <li>Треугольные окна в пол</li>
+            <li>Второй свет</li>
+            <li>Своя веранда</li>
+            <li>Wi-Fi</li>
+          </ul>
+          <div class="stay-foot">
+            <div class="price">
+              <span class="price-from">от</span>
+              <span class="price-val">11 200 ₽</span>
+              <span class="price-unit">/ сутки</span>
+            </div>
+            <a href="#book" class="btn btn-outline btn-sm">Забронировать</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Standard -->
+      <article class="stay-card reveal" style="--d:.35s">
+        <div class="stay-media">
+          <img src="assets/room-interior.jpg" alt="Стандартный номер" />
+          <div class="stay-count">1 из 12</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-head">
+            <h3>Стандартный номер</h3>
+            <div class="stay-cap">до 2 гостей · 22 м²</div>
+          </div>
+          <ul class="stay-amenities">
+            <li>Вид на лес</li>
+            <li>Завтрак включён</li>
+            <li>Тихий этаж</li>
+            <li>Wi-Fi</li>
+          </ul>
+          <div class="stay-foot">
+            <div class="price">
+              <span class="price-from">от</span>
+              <span class="price-val">4 200 ₽</span>
+              <span class="price-unit">/ сутки</span>
+            </div>
+            <a href="#book" class="btn btn-outline btn-sm">Забронировать</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INFRA / ACTIVITIES -->
+<section class="section infra" id="infra">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow"><span></span> Услуги и развлечения</div>
+        <h2 class="h2">Чем заняться на территории</h2>
+      </div>
+      <p class="section-sub">
+        Всё, что нужно для отдыха — уже здесь. От банного комплекса до эко-троп: не нужно никуда уезжать.
+      </p>
+    </div>
+
+    <div class="infra-grid">
+      <article class="infra-card infra-hero reveal" style="--d:.05s">
+        <img src="assets/banya.jpg" alt="Русская баня" />
+        <div class="infra-shade"></div>
+        <div class="infra-copy">
+          <div class="infra-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2s2 2 0 4 0 4 0 4M12 2s2 2 0 4 0 4 0 4M16 2s2 2 0 4 0 4 0 4M4 14h16v4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-4Z"/></svg>
+          </div>
+          <h3>Русская баня<br/>на дровах</h3>
+          <p>Парная, купель, чан под открытым небом. Аренда от 2 часов.</p>
+          <a href="#" class="infra-link">Забронировать баню →</a>
+        </div>
+      </article>
+
+      <article class="infra-card reveal" style="--d:.1s">
+        <img src="assets/mangal.jpg" alt="Мангальная зона" />
+        <div class="infra-shade"></div>
+        <div class="infra-copy">
+          <div class="infra-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2c0 3 4 3 4 6s-4 3-4 6M14 4c0 2 3 2 3 4M4 14h16l-2 6H6l-2-6Z"/></svg>
+          </div>
+          <h3>Мангальные зоны<br/>и беседки</h3>
+          <p>10 беседок с мангалами, дровами и посудой.</p>
+          <a href="#" class="infra-link">Подробнее →</a>
+        </div>
+      </article>
+
+      <article class="infra-card reveal" style="--d:.15s">
+        <img src="assets/trail-family.jpg" alt="Эко-тропа" />
+        <div class="infra-shade"></div>
+        <div class="infra-copy">
+          <div class="infra-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M9 8l3 3 3-3M6 13l6 6 6-6M4 21h16"/></svg>
+          </div>
+          <h3>Эко-тропы<br/>по лесу</h3>
+          <p>3 маршрута: 2, 5 и 12 км с указателями и точками отдыха.</p>
+          <a href="#" class="infra-link">Смотреть карту →</a>
+        </div>
+      </article>
+
+      <article class="infra-card reveal" style="--d:.2s">
+        <img src="assets/trail-kids.jpg" alt="Детская площадка" />
+        <div class="infra-shade"></div>
+        <div class="infra-copy">
+          <div class="infra-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="2"/><path d="M12 8v6M8 12h8M6 20l6-6 6 6"/></svg>
+          </div>
+          <h3>Детские и спортивные<br/>площадки</h3>
+          <p>Игровой городок, мини-футбол, волейбол, настольный теннис.</p>
+          <a href="#" class="infra-link">Подробнее →</a>
+        </div>
+      </article>
+
+      <article class="infra-card reveal" style="--d:.25s">
+        <img src="assets/aerial-cabins.jpg" alt="Прокат" />
+        <div class="infra-shade"></div>
+        <div class="infra-copy">
+          <div class="infra-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l4-9h4l4 9M10 8h4"/></svg>
+          </div>
+          <h3>Прокат<br/>инвентаря</h3>
+          <p>Велосипеды, самокаты, скандинавские палки, зимой — лыжи.</p>
+          <a href="#" class="infra-link">Цены проката →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow"><span></span> Галерея</div>
+        <h2 class="h2">Атмосфера в кадрах</h2>
+      </div>
+      <p class="section-sub">
+        Настоящие фотографии нашей территории, домиков и вечернего света.
+      </p>
+    </div>
+
+    <div class="masonry">
+      <div class="masonry-col">
+        <figure class="mfig reveal"><img src="assets/cabin-twilight.jpg" alt=""/></figure>
+        <figure class="mfig reveal" style="--d:.1s"><img src="assets/pine-macro-2.jpg" alt=""/></figure>
+        <figure class="mfig reveal" style="--d:.2s"><img src="assets/room-bedroom.jpg" alt=""/></figure>
+      </div>
+      <div class="masonry-col">
+        <figure class="mfig reveal" style="--d:.05s"><img src="assets/aerial-cabins.jpg" alt=""/></figure>
+        <figure class="mfig reveal" style="--d:.15s"><img src="assets/cabin-dome-2.jpg" alt=""/></figure>
+        <figure class="mfig reveal" style="--d:.25s"><img src="assets/mangal.jpg" alt=""/></figure>
+      </div>
+      <div class="masonry-col">
+        <figure class="mfig reveal" style="--d:.1s"><img src="assets/forest-atmosphere.jpg" alt=""/></figure>
+        <figure class="mfig reveal" style="--d:.2s"><img src="assets/trail-family.jpg" alt=""/></figure>
+        <figure class="mfig reveal" style="--d:.3s"><img src="assets/cabin-evening.jpg" alt=""/></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow"><span></span> Отзывы</div>
+        <h2 class="h2">Что рассказывают гости</h2>
+      </div>
+      <div class="reviews-score">
+        <div class="score-num">4.9</div>
+        <div>
+          <div class="score-stars" aria-hidden="true">★★★★★</div>
+          <div class="score-count">На основе 340+ отзывов</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review reveal" style="--d:.05s">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Приехали на выходные в дом-сферу — совершенно другой мир. Утро в тумане, глинтвейн вечером на террасе. Уезжать не хотелось.</p>
+        <div class="review-author">
+          <div class="avatar" style="background:linear-gradient(135deg,#8a9a7b,#4a5d3f)">АМ</div>
+          <div>
+            <div class="review-name">Анна М.</div>
+            <div class="review-meta">Июнь 2026 · Дом-сфера</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review reveal" style="--d:.15s">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Отмечали годовщину в коттедже «Хвоя». Своя баня, камин, полная приватность. Персонал незаметный, но всё как по волшебству.</p>
+        <div class="review-author">
+          <div class="avatar" style="background:linear-gradient(135deg,#c9a878,#8a6a3b)">ДК</div>
+          <div>
+            <div class="review-name">Дмитрий К.</div>
+            <div class="review-meta">Май 2026 · Коттедж «Хвоя»</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review reveal" style="--d:.25s">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Ездили большой семьёй, с детьми. Всем нашлось занятие: детям площадка и велосипеды, взрослым баня и мангал. Вернёмся точно.</p>
+        <div class="review-author">
+          <div class="avatar" style="background:linear-gradient(135deg,#a8b090,#5c6b4a)">ЕС</div>
+          <div>
+            <div class="review-name">Елена С.</div>
+            <div class="review-meta">Апрель 2026 · A-Frame</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section location" id="location">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow"><span></span> Как добраться</div>
+        <h2 class="h2">В часе от Нижнего Новгорода</h2>
+      </div>
+      <p class="section-sub">
+        Координаты, маршрут и все контакты — всё, что нужно, чтобы легко приехать.
+      </p>
+    </div>
+
+    <div class="location-grid">
+      <div class="map reveal">
+        <!-- stylized eco-map SVG -->
+        <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" class="map-svg" aria-hidden="true">
+          <defs>
+            <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="0.6" fill="#8a9a7b" opacity=".25"/>
+            </pattern>
+            <linearGradient id="mapbg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8ebd8"/>
+              <stop offset="1" stop-color="#d5dcc0"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="400" fill="url(#mapbg)"/>
+          <rect width="600" height="400" fill="url(#dots)"/>
+
+          <!-- river -->
+          <path d="M-20 260 Q 120 220 220 260 T 500 220 T 640 240" stroke="#a8c1c5" stroke-width="18" fill="none" stroke-linecap="round" opacity=".7"/>
+          <path d="M-20 260 Q 120 220 220 260 T 500 220 T 640 240" stroke="#c5d8db" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+          <!-- forest patches -->
+          <g opacity=".55" fill="#7b8f6b">
+            <circle cx="80" cy="120" r="35"/><circle cx="120" cy="140" r="30"/><circle cx="60" cy="160" r="28"/>
+            <circle cx="470" cy="90" r="34"/><circle cx="510" cy="120" r="28"/><circle cx="440" cy="130" r="24"/>
+            <circle cx="520" cy="340" r="40"/><circle cx="560" cy="360" r="32"/><circle cx="480" cy="360" r="28"/>
+          </g>
+
+          <!-- road from NN to sputnik -->
+          <path d="M60 340 Q 200 300 300 260 T 470 180" stroke="#c9a878" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+
+          <!-- NN marker -->
+          <g transform="translate(60,340)">
+            <circle r="8" fill="#2d3d2f"/>
+            <circle r="3" fill="#faf8f3"/>
+            <text x="14" y="4" font-family="Inter,sans-serif" font-size="12" fill="#2d3d2f" font-weight="500">Нижний Новгород</text>
+          </g>
+
+          <!-- Sputnik marker -->
+          <g transform="translate(470,180)">
+            <circle r="18" fill="#4a5d3f" opacity=".18"/>
+            <circle r="10" fill="#4a5d3f"/>
+            <circle r="4" fill="#f4efe4"/>
+            <text x="18" y="-8" font-family="Cormorant Garamond,serif" font-size="18" fill="#2d3d2f" font-weight="600" font-style="italic">Спутник</text>
+            <text x="18" y="10" font-family="Inter,sans-serif" font-size="11" fill="#4a5d3f">база отдыха</text>
+          </g>
+
+          <!-- compass -->
+          <g transform="translate(550,50)" opacity=".7">
+            <circle r="16" fill="none" stroke="#4a5d3f" stroke-width="1"/>
+            <path d="M0 -12 L4 4 L0 0 L-4 4 Z" fill="#4a5d3f"/>
+            <text y="-20" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#4a5d3f">С</text>
+          </g>
+        </svg>
+        <div class="map-legend">
+          <div><span class="dot dot-road"></span>маршрут ~60 км, ~1 час</div>
+        </div>
+      </div>
+
+      <div class="location-info reveal" style="--d:.1s">
+        <div class="loc-block">
+          <div class="loc-label">Адрес</div>
+          <div class="loc-val">Нижегородская обл., Городецкий район,<br/>лесной массив «Сосновый Бор», строение 1</div>
+        </div>
+        <div class="loc-block">
+          <div class="loc-label">GPS-координаты</div>
+          <div class="loc-val mono">56.6234° N &nbsp; 43.4712° E</div>
+        </div>
+        <div class="loc-block">
+          <div class="loc-label">Как ехать</div>
+          <div class="loc-val">По трассе Р-152 в сторону Городца, после посёлка Смолино — поворот направо по указателю «Спутник», далее 3 км по лесной дороге.</div>
+        </div>
+        <div class="loc-block">
+          <div class="loc-label">Ресепшн круглосуточно</div>
+          <div class="loc-val">
+            <a href="tel:+78312000000" class="loc-phone">+7 (831) 200-00-00</a><br/>
+            <a href="mailto:hello@sputniknn.ru">hello@sputniknn.ru</a>
+          </div>
+        </div>
+        <a href="#book" class="btn btn-primary">Забронировать выезд</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 3 L8 15 L12 15 L6 24 L11 24 L5 29 L27 29 L21 24 L26 24 L20 15 L24 15 Z"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Спутник</span>
+          <span class="brand-sub">база отдыха</span>
+        </span>
+      </a>
+      <p class="footer-tag">Тишина соснового леса в часе езды от города.<br/>Работаем круглый год.</p>
+      <div class="socials">
+        <a href="#" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Zm4.6 6.9-1.5 7.3c-.1.5-.4.6-.8.4l-2.3-1.7-1.1 1.1c-.1.1-.2.2-.4.2l.2-2.3 4.2-3.8c.2-.2 0-.3-.2-.1L9.5 13l-2.2-.7c-.5-.2-.5-.5.1-.7l8.6-3.3c.4-.2.7 0 .6.6Z"/></svg></a>
+        <a href="#" aria-label="VK"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5Zm10.5 12h1.2c.4 0 .5-.2.5-.5v-1.2c0-.4.3-.5.5-.3.6.6 1.6 2 1.6 2h2.1c.5 0 .5-.3.4-.5-.4-.9-2-2.5-2.2-2.7-.1-.2-.1-.2 0-.4.3-.4 1.8-2.5 2-3.4 0-.3-.1-.4-.4-.4h-2c-.4 0-.5.2-.7.5-.4.9-1.4 2.7-1.7 2.8-.2 0-.3-.1-.3-.5V9.6c0-.4-.1-.6-.5-.6h-3.1c-.3 0-.5.1-.5.3s.3.3.5.3c.4.1.5.3.5.9 0 0 0 1.9-.1 2.2-.1.5-.3.4-.5.1-.5-.6-1.4-2.5-1.9-4-.1-.4-.3-.5-.7-.5H5.7c-.3 0-.4.1-.4.3 0 .3.4 2.2 2.5 4.9C9.2 15.7 11 17 12.5 17Z"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2Zm5.6 14.1c-.2.6-1.4 1.2-1.9 1.2-.5 0-1.1.2-3.5-.8-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.3.7 1 2.3 1 2.5.1.1.1.3 0 .5-.1.2-.1.3-.3.5s-.4.4-.5.6c-.2.2-.4.4-.2.7.2.3 1 1.6 2.1 2.5 1.4 1.2 2.5 1.6 2.9 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 1.9.9 2.2 1.1.3.2.5.2.6.4 0 .1 0 .8-.2 1.4Z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Разделы</h5>
+      <a href="#about">О базе</a>
+      <a href="#stay">Проживание</a>
+      <a href="#infra">Услуги</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#reviews">Отзывы</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Контакты</h5>
+      <a href="tel:+78312000000">+7 (831) 200-00-00</a>
+      <a href="mailto:hello@sputniknn.ru">hello@sputniknn.ru</a>
+      <span>Ресепшн 24/7</span>
+      <span>Городецкий район, НО</span>
+    </div>
+
+    <div class="footer-col">
+      <h5>Бронирование онлайн</h5>
+      <p class="footer-note">Оставьте заявку — перезвоним в течение 15 минут и подберём даты.</p>
+      <a href="#book" class="btn btn-primary btn-sm">Забронировать</a>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <span>© 2015–2026 База отдыха «Спутник»</span>
+    <span>Политика конфиденциальности · Публичная оферта</span>
+  </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
