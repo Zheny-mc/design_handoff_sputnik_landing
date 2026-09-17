@@ -6,8 +6,10 @@ const heroImg = document.getElementById('heroImg');
 
 const onScroll = () => {
   const y = window.scrollY;
-  if (y > 20) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
+  if (nav) {
+    if (y > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }
 
   // hero parallax
   if (heroImg && y < window.innerHeight * 1.5) {
@@ -18,18 +20,24 @@ window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 // ------- Reveal-on-scroll observer -------
-const io = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-);
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+const io = 'IntersectionObserver' in window
+  ? new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    )
+  : null;
+
+document.querySelectorAll('.reveal').forEach((el) => {
+  if (io) io.observe(el);
+  else el.classList.add('in');
+});
 
 // ------- Default booking dates -------
 (function initDates() {
@@ -44,6 +52,33 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   if (ci) ci.value = fmt(inD);
   if (co) co.value = fmt(outD);
 })();
+
+// ------- Room price layout -------
+// Keep the price intact on narrow cards and place the booking button below it.
+const roomPriceStyle = document.createElement('style');
+roomPriceStyle.textContent = `
+  .stay-foot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: auto;
+  }
+  .stay-foot .btn {
+    align-self: flex-start;
+  }
+  .price {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .price-val {
+    white-space: nowrap;
+  }
+`;
+document.head.appendChild(roomPriceStyle);
 
 // ------- Smooth-scroll for in-page anchors (native, but respect nav offset) -------
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
